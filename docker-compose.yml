@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  freight-ai-api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - APP_ENV=development
+    restart: always
+
+  # Future database service for RAG integration
+  # db:
+  #   image: ankane/pgvector
+  #   environment:
+  #     POSTGRES_DB: freightai
+  #     POSTGRES_PASSWORD: password
+  #   ports:
+  #     - "5432:5432"
